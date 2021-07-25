@@ -11,11 +11,17 @@ arcade.start_render()
 # Hier kannst du zeichnen
 
 # Der Boden
-arcade.draw_lrtb_rectangle_filled(0, width, 100, 0, arcade.csscolor.GREEN)
+arcade.draw_xywh_rectangle_filled(0, 0, width, 100, arcade.csscolor.GREEN)
 
 # Ein Baum
-arcade.draw_rectangle_filled(300, 220, 20, 60, arcade.csscolor.SIENNA)
-arcade.draw_triangle_filled(300, 300, 270, 220, 330, 220, arcade.csscolor.DARK_GREEN)
+x = 290
+y = 190
+# Baumstamm
+arcade.draw_xywh_rectangle_filled(x, y, 20, 60, arcade.csscolor.SIENNA)
+# Baumkrone
+arcade.draw_triangle_filled(x-20, y+30, x+10, y+110, x+40, y+30, arcade.csscolor.DARK_GREEN)
+# Roter Punkt
+arcade.draw_circle_filled(x,y, 3, arcade.color.RED)
 
 arcade.finish_render()
 

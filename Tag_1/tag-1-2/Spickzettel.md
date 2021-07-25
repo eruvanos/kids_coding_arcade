@@ -37,10 +37,11 @@ arcade.draw_line(0, 0, 50, 50, arcade.color.YELLOW)
 import arcade
 
 # Gefüllt
-arcade.draw_rectangle_filled(50, 100, 10, 20, arcade.color.YELLOW)
+arcade.draw_xywh_rectangle_filled(150, 100, 100, 50, arcade.color.YELLOW)
 
 # Nur außen
-arcade.draw_rectangle_outline(50, 100, 10, 20, arcade.color.YELLOW)
+arcade.draw_xywh_rectangle_outline(150, 100, 100, 50, arcade.color.YELLOW)
+
 
 ```
 
@@ -94,5 +95,5 @@ Um einen Punkt auf dem Bildschirm anzugeben müsst ihr zwei Zahlen angeben X und
 
 X - Gibt an wie weit von links nach rechts Y - Gibt an wie viel von unten nach oben
 
-![](Bilder/koordinaten.png)
+![](./koordinaten.png)
 
