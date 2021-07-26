@@ -23,40 +23,36 @@ arcade.finish_render()
 arcade.run()
 ```
 
+## Funktionen
+
+```python
+# Eine Funktion fängt an mit 'def', einem Namen und den Klammern
+def baum(x, y): # In den Klammern könnt ihr angeben, welche informationen ihr braucht 
+     # alle Befehle, die ausgeführt werden sollen, müssen eingerückt werden:
+    arcade.draw_xywh_rectangle_filled(x, y, 20, 60, arcade.csscolor.SIENNA)
+    arcade.draw_triangle_filled(x-20, y+30, x+10, y+110, x+40, y+30, arcade.csscolor.DARK_GREEN)
+    arcade.draw_circle_filled(x,y, 3, arcade.color.RED)
+
+
+baum(290, 190)
+```
+
+
 ## Zeichenbefehle
 
-### Linie
-
 ```python
 import arcade
 
+# Linie
 arcade.draw_line(0, 0, 50, 50, arcade.color.YELLOW)
-```
 
-### Rechteck
-
-```python
-import arcade
-
-# Gefüllt
+# Rechteck
 arcade.draw_xywh_rectangle_filled(150, 100, 100, 50, arcade.color.YELLOW)
-
-# Nur außen
 arcade.draw_xywh_rectangle_outline(150, 100, 100, 50, arcade.color.YELLOW)
 
-
-```
-
-### Kreis
-
-```python
-import arcade
-
-# Gefüllt
+# Kreis
 arcade.draw_circle_filled(50, 100, 10, arcade.color.YELLOW)
-
-# Nicht gefüllt
-arcade.draw_circle_filled(50, 100, 10, arcade.color.YELLOW)
+arcade.draw_circle_outline(50, 100, 10, arcade.color.YELLOW)
 ```
 
 ## Farben
