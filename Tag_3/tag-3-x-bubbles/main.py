@@ -14,7 +14,7 @@ bubbles = arcade.SpriteList()
 score = 0
 keys = set()
 
-for _ in range(1000):
+for _ in range(20):
     bubble = SpriteCircle(randint(10, 50), arcade.color.BLUE)
     bubble.center_x = randint(0, width)
     bubble.center_y = randint(-50, 0)
@@ -45,6 +45,8 @@ def update(dt):
 
     if arcade.key.SPACE in keys:
         bubbles = arcade.SpriteList()
+
+
 
 
 @window.event

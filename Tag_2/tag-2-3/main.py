@@ -45,7 +45,13 @@ def draw():
     alien.draw()
     arcade.finish_render()
 
+
+
 # Aufgabe: Nun sollten wir etwas mit der Maus machen
+@window.event("on_mouse_motion")
+def wenn_maus_bewegt(x, y, button, modifier):
+    alien.center_x = x
+    alien.center_y = y
 
 draw()
 arcade.run()
