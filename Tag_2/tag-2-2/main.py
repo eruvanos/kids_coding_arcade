@@ -30,6 +30,7 @@ sonne(190, 100)
 boden()
 
 # Ein Baum
+# > Hier musst du ein For Schleife benutzen
 baum(190, 120)
 baum(240, 120)
 baum(290, 120)

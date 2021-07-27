@@ -27,7 +27,7 @@ arcade.run()
 
 ```python
 for x in range(10):
-    # Dies zeichnet 10 Bäume, im Abstand von 50 Pixel
+    # Dies zeichnet 10 Bäume, im abstand von 50 Pixel
     baum(x * 50, 190)
 ```
 

@@ -1,19 +1,29 @@
 import arcade
 
 # Öffne ein weißes Fenster
+from arcade import Sprite
+
 width = arcade.get_screens()[0].width
 height = arcade.get_screens()[0].height
 window = arcade.open_window(width, height, "Arcade")
+window.set_mouse_visible(False)
 arcade.set_background_color(arcade.color.CHROME_YELLOW)
-arcade.start_render()
 
+# Hier kommt was neues:
 
-# Sonne
+# So erstellt man eine Spielerin oder einen Spieler
+alien = arcade.Sprite(arcade.resources.image_alien_blue_front, scale=0.5)
+
+# Ein Sprite ist sowas wie eine Figur, die man über den Bildschirm bewegen kann.
+# Dafür kannst du die x und y Werte so setzen:
+alien.center_x = 100
+alien.center_y = 100
+
+# Dies solltet ihr schon kennen, dies sind Funktionen für den Wald
 def sonne(x, y):
     arcade.draw_circle_filled(x, y, 100, arcade.color.CADMIUM_YELLOW)
 
 
-# Der Boden
 def boden():
     arcade.draw_xywh_rectangle_filled(0, 0, width, 150, arcade.csscolor.GREEN)
 
@@ -24,20 +34,20 @@ def baum(x, y):
     arcade.draw_circle_filled(x, y, 3, arcade.color.RED)
 
 
-# Hier wird die erste Funktion benutzt
-sonne(190, 100)
+def wald():
+    sonne(190, 100)
+    boden()
+    for x in range(5):
+        baum(190 + 50 * x, 100)
 
-boden()
+# Das ist NEU: auch unsere Zeichenfunktionen kommen in eine Funktion
+def draw():
+    arcade.start_render()
+    wald()
+    alien.draw()
+    arcade.finish_render()
 
-# Ein Baum
-baum(190, 120)
-baum(240, 120)
-baum(290, 120)
-baum(340, 120)
-baum(390, 120)
-baum(440, 120)
-baum(490, 120)
+# Aufgabe: Nun sollten wir etwas mit der Maus machen
 
-# Startet das Programm
-arcade.finish_render()
+draw()
 arcade.run()

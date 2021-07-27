@@ -7,20 +7,71 @@ Beim Programmieren schreibt man Text, und gibt dem Computer Befehle.
 ```python
 import arcade
 
-# Öffne ein weißes Fenster
+# Öffne ein Fenster
 width = arcade.get_screens()[0].width
 height = arcade.get_screens()[0].height
 window = arcade.open_window(width, height, "Arcade")
+window.set_mouse_visible(False)
 arcade.set_background_color(arcade.color.CHROME_YELLOW)
 
-arcade.start_render()
+# So erstellt man eine Spielerin oder einen Spieler
+figur = arcade.Sprite(arcade.resources.image_alien_blue_front)
+# figur = arcade.Sprite(arcade.resources.image_bee)
+# figur = arcade.Sprite(arcade.resources.image_female_adventurer_idle)
+# figur = Sprite(arcade.resources.image_male_adventurer_idle)
 
-# Hier kannst du zeichnen
+# So kann man einen SpielerIn positionieren
+figur.center_x = 100
+figur.center_y = 100
 
-arcade.finish_render()
+# Hier Zeichnen wir
+def draw():
+    arcade.start_render()
+    # Hier kann man noch mehr zeichnen, zum Beispiel einen Wald
+    figur.draw()
+    arcade.finish_render()
 
-# Startet das Programm
+draw()
 arcade.run()
+
+```
+
+
+## Auf die Maus reagieren
+
+```python
+# Nun wird es nochmal richtig spannend: wir benutzen die Maus, um den Spieler zu bewegen
+@window.event("on_mouse_motion")
+def wenn_maus_bewegt(x, y, button, modifier):
+    pass
+```
+
+## Erstelle eine Figur
+```python
+import arcade
+
+alien = arcade.Sprite(arcade.resources.image_alien_blue_front, scale=0.8)
+
+# Hiermit kann man eine Figur auf dem Bildschirm positionieren
+alien.center_x = 100
+alien.center_y = 200
+
+# Hiermit kann man eine Figur zeichnen
+alien.draw()
+```
+
+Natürlich gibt es noch viel mehr Figuren, die du benutzen kannst, schau doch mal hier:
+[Übersicht](http://arcade-gui.s3-website.eu-central-1.amazonaws.com/resources.html)
+
+## Eine Zeichenfunktion
+
+Um auch das Zeichnen wieder verwenden zu können, lohnt es sich, die Befehle in eine eigene Funktion zu tun.
+
+```python
+def draw():
+    arcade.start_render()
+    # Hier kannst du nun zeichnen
+    arcade.finish_render()
 ```
 
 ## For-Schleifen

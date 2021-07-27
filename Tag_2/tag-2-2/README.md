@@ -1,37 +1,31 @@
-# Funktionen
+# For Schleife
 
-Nehmen wir einmal das Baum-Beispiel 
+Beim Programmieren möchte man häufig dinge mehrfach tun. 
+Zum Beipiel brauchen wir für einen Wald, viel mehr Bäume.
 
-```python
-x = 290
-y = 190
-
-# Baumstamm
-arcade.draw_xywh_rectangle_filled(x, y, 20, 60, arcade.csscolor.SIENNA)
-arcade.draw_triangle_filled(x-20, y+30, x+10, y+110, x+40, y+30, arcade.csscolor.DARK_GREEN)
-arcade.draw_circle_filled(x,y, 3, arcade.color.RED)
-```
-
-Wenn ihr nun einen zweiten Baum malen wollt, müsst ihr nochmal alles neu schreiben.
-Das ist vielleicht ein wenig umständlich. 
-Viel besser wäre es doch, wenn ihr selbst eine Funktion schreiben könntet,
-die einen Baum zeichnet...
-
+Schauen wir uns dieses Beispiel einmal an:
 
 ```python
-# Eine Funktion fängt an mit 'def', einem Namen und den Klammern
-def baum(x, y): # In den Klammern könnt ihr angeben, welche informationen ihr braucht 
-     # alle Befehle, die ausgeführt werden sollen, müssen eingerückt werden:
-    arcade.draw_xywh_rectangle_filled(x, y, 20, 60, arcade.csscolor.SIENNA)
-    arcade.draw_triangle_filled(x-20, y+30, x+10, y+110, x+40, y+30, arcade.csscolor.DARK_GREEN)
-    arcade.draw_circle_filled(x,y, 3, arcade.color.RED)
+for x in range(5):
+    print(x)
 ```
 
-Wenn ihr nun einen Baum zeichnen wollte, geht das ganz einfach:
+Dieser Code würde entsprechend `print()` fünf mal ausführen, 
+und dabei ändert sich jedes mal die x Variable. (0, 1, 2, 3, 4)
 
-```python
-baum(240, 190)
-baum(290, 190)
-```
+Doch warum fangen wir eigentlich bei 0 an?
 
-> ✅ Aufgabe: Schreibt den neuen Code um, sodass Ihr Funktionen benutzen könnt.
+![](./meme.jpg)
+
+> In der Programmierung fängt man häufig bei 0 an zu zählen.
+> Das ist am Anfang verwirrend, aber dafür gibt es einen tollen Spruch:
+>
+>   ```markdown
+>   Es gibt zwei schwierige Dinge beim Programmieren:
+>   1. Alte Informationen
+>   2. den richtigen Namen zu finden,
+>   3. und verzählt-um-eins Fehler 
+>   ```
+
+
+> ✅ Aufgabe: Zeichnet mehrere Bäume nebeneinander, aber benutzt nur einmal eure `baum(x,y)` Funktion
