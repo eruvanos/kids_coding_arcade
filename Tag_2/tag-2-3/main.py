@@ -1,8 +1,6 @@
 import arcade
 
 # Öffne ein weißes Fenster
-from arcade import Sprite
-
 width = arcade.get_screens()[0].width
 height = arcade.get_screens()[0].height
 window = arcade.open_window(width, height, "Arcade")
